@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Homes & Condo Rentals - Your Airbnb Clone</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.airbnb.com/favicon.ico" type="image/x-icon">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        airbnb: '#FF5A5F',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="text-airbnb text-3xl">
+                        <i class="fab fa-airbnb"></i>
+                    </a>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="hidden md:flex items-center space-x-4 border rounded-full py-2 px-4 shadow-sm hover:shadow-md transition">
+                    <div class="border-r pr-4">Anywhere</div>
+                    <div class="border-r pr-4">Any week</div>
+                    <div class="flex items-center">
+                        <span class="pr-4">Add guests</span>
+                        <button class="bg-airbnb text-white p-2 rounded-full">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Menu -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hidden md:block hover:bg-gray-100 px-4 py-2 rounded-full">Airbnb your home</a>
+                    <button class="hover:bg-gray-100 p-2 rounded-full">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="flex items-center space-x-2 border rounded-full p-2 hover:shadow-md">
+                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-user-circle text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Filters -->
+    <div class="pt-20 pb-6 border-b">
+        <div class="container mx-auto px-4">
+            <div class="flex space-x-8 overflow-x-auto pb-4">
+                <button class="flex flex-col items-center min-w-[56px] text-gray-600 hover:text-black">
+                    <i class="fas fa-cabin text-2xl mb-1"></i>
+                    <span class="text-xs">Cabins</span>
+                </button>
+                <button class="flex flex-col items-center min-w-[56px] text-gray-600 hover:text-black">
+                    <i class="fas fa-mountain text-2xl mb-1"></i>
+                    <span class="text-xs">Amazing views</span>
+                </button>
+                <button class="flex flex-col items-center min-w-[56px] text-gray-600 hover:text-black">
+                    <i class="fas fa-water text-2xl mb-1"></i>
+                    <span class="text-xs">Lakefront</span>
+                </button>
+                <button class="flex flex-col items-center min-w-[56px] text-gray-600 hover:text-black">
+                    <i class="fas fa-campground text-2xl mb-1"></i>
+                    <span class="text-xs">Camping</span>
+                </button>
+                <button class="flex flex-col items-center min-w-[56px] text-gray-600 hover:text-black">
+                    <i class="fas fa-umbrella-beach text-2xl mb-1"></i>
+                    <span class="text-xs">Beach</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property Listings -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Property Card 1 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-square rounded-xl overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg" alt="Cabin" class="w-full h-full object-cover">
+                    <button class="absolute top-3 right-3 text-2xl text-white hover:text-airbnb">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="mt-3">
+                    <div class="flex justify-between">
+                        <h3 class="font-semibold">Luxury Cabin</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm"></i>
+                            <span class="ml-1">4.96</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500">153 miles away</p>
+                    <p class="text-gray-500">Mar 31 - Apr 5</p>
+                    <p class="mt-1"><span class="font-semibold">$189</span> night</p>
+                </div>
+            </div>
+
+            <!-- Property Card 2 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-square rounded-xl overflow-hidden">
+                    <img src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg" alt="Lake House" class="w-full h-full object-cover">
+                    <button class="absolute top-3 right-3 text-2xl text-white hover:text-airbnb">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="mt-3">
+                    <div class="flex justify-between">
+                        <h3 class="font-semibold">Lakefront Retreat</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm"></i>
+                            <span class="ml-1">4.91</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500">81 miles away</p>
+                    <p class="text-gray-500">Mar 30 - Apr 4</p>
+                    <p class="mt-1"><span class="font-semibold">$83</span> night</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t mt-8">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:underline">Help Center</a></li>
+                        <li><a href="#" class="text-gray-600 hover:underline">Safety information</a></li>
+                        <li><a href="#" class="text-gray-600 hover:underline">Cancellation options</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:underline">About us</a></li>
+                        <li><a href="#" class="text-gray-600 hover:underline">Newsroom</a></li>
+                        <li><a href="#" class="text-gray-600 hover:underline">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Hosting</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:underline">Try hosting</a></li>
+                        <li><a href="#" class="text-gray-600 hover:underline">Host resources</a></li>
+                        <li><a href="#" class="text-gray-600 hover:underline">Community forum</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Payment Options</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:underline">Credit Card</a></li>
+                        <li><a href="#" class="text-gray-600 hover:underline">PayPal</a></li>
+                        <li><a href="#" class="text-gray-600 hover:underline">Bank Transfer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2024 Airbnb Clone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+</html>
