@@ -1,0 +1,212 @@
+/* Custom styles on top of Tailwind CSS */
+
+/* Smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Category filters scrollbar */
+.overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Property card hover effects */
+.property-card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.property-card:hover {
+    transform: scale(1.02);
+}
+
+/* Image hover effects */
+.aspect-square img {
+    transition: transform 0.3s ease;
+}
+
+.group:hover .aspect-square img {
+    transform: scale(1.05);
+}
+
+/* Heart icon animation */
+.fa-heart {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.fa-heart:hover {
+    transform: scale(1.2);
+    color: #FF5A5F;
+}
+
+/* Custom loading spinner */
+.loading-spinner {
+    border: 3px solid rgba(255, 90, 95, 0.3);
+    border-radius: 50%;
+    border-top: 3px solid #FF5A5F;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Search bar focus effects */
+.search-bar:focus-within {
+    box-shadow: 0 0 0 2px rgba(255, 90, 95, 0.2);
+}
+
+/* Button hover effects */
+.btn-primary {
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Price badge */
+.price-badge {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+}
+
+/* Footer link hover effect */
+.footer-link {
+    position: relative;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #FF5A5F;
+    transition: width 0.2s ease;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile menu animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.mobile-menu {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Toast notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Date picker custom styles */
+.date-picker {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.date-picker:focus {
+    border-color: #FF5A5F;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 90, 95, 0.2);
+}
+
+/* Custom checkbox style */
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #FF5A5F;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.custom-checkbox:checked {
+    background-color: #FF5A5F;
+    border-color: #FF5A5F;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+/* Image gallery grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Accessibility focus styles */
+*:focus-visible {
+    outline: 2px solid #FF5A5F;
+    outline-offset: 2px;
+}
